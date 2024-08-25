@@ -1,2 +1,4 @@
 # Anicorekuta
-複数のアニメサイトからダウンロードするツール 予定
+c++やpython, goを用いてダウンロードするツールにする予定
+
+widevineのprivate keyはどっかに保存
