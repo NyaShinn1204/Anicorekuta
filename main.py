@@ -140,7 +140,7 @@ def setup_content():
 printl("info", "Loading GUI")
 
 setup_sidebar()
-setup_cotent_sidebar(2, 1)
+setup_cotent_sidebar(2, 1, None)
 setup_content()
 
 
