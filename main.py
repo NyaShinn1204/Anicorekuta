@@ -42,6 +42,23 @@ def setup_cotent_sidebar(num1, num2, num3):
       if num3 == 2:
         printl("info", "Open U-next Downloader")
       if num3 == None:
+        # Load images and add them to the scrollable frame
+        # You should replace the image paths with your own image paths
+        image_paths = ["data/service_image/unext.jpg","data/service_image/abema.jpg"]  # Add all your image paths here
+        
+        def on_image_click(index):
+          print(f"Image {index} clicked!")
+        
+        for i, path in enumerate(image_paths):
+          img = Image.open(path)
+          img = ctk.CTkImage(img, size=(175, 100))  # Adjust the size as needed
+          label = ctk.CTkLabel(master=frame_scroll, image=img, text="")
+          # Set the cursor to hand when hovering over the image
+          label.configure(cursor="hand2")
+      
+          # Bind the click event to the label
+          label.bind("<Button-1>", lambda event, idx=i: on_image_click(idx+1))
+          label.grid(row=i // 5, column=i % 5, padx=10, pady=10)  # 5 images per row
         printl("info", "Open All DOwnloader")
     if num2 == 2:
       if num3 == 1:
