@@ -8,6 +8,8 @@ from PIL import Image, ImageDraw, ImageOps
 from tkinter import filedialog
 from CTkMessagebox import CTkMessagebox
 
+import util.abema as downloader_abema
+
 version = "0.0.1"
 
 def printl(num, data):
@@ -31,23 +33,27 @@ def clear_frame(frame):
 
 def setup_cotent_sidebar(num1, num2, num3):
   global module_frame
-  frame_scroll = module_frame = ctk.CTkScrollableFrame(root, fg_color="#3f5673", bg_color="#152945", width=1100, height=768)
+  frame_scroll = module_frame = ctk.CTkFrame(root, fg_color="#3f5673", bg_color="#3f5673", width=1100, height=768)
   # tk.Label(root, bg="#3f5673", width=1024, height=720).place(x=0,y=0)
   module_frame.place(x=230, y=0)
   clear_frame(frame_scroll)
   if num1 == 1:
     if num2 == 1:
       if num3 == 1:
+        #ctk.CTkLabel(master=module_frame, text="じゃｂどあういｂｗだいうｓびｄ").place(x=300,y=150)
+        downloader_abema.gui.init_gui(frame_scroll)
+        
         printl("info", "Open Abema Downloader")
       if num3 == 2:
         printl("info", "Open U-next Downloader")
       if num3 == None:
         # Load images and add them to the scrollable frame
         # You should replace the image paths with your own image paths
-        image_paths = ["data/service_image/unext.jpg","data/service_image/abema.jpg"]  # Add all your image paths here
+        image_paths = ["data/service_image/abema.jpg","data/service_image/unext.jpg"]  # Add all your image paths here
         
         def on_image_click(index):
-          print(f"Image {index} clicked!")
+          setup_cotent_sidebar(1, 1, index)
+          #print(f"Image {index} clicked!")
         
         for i, path in enumerate(image_paths):
           img = Image.open(path)
