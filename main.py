@@ -31,8 +31,9 @@ def clear_frame(frame):
 
 def setup_cotent_sidebar(num1, num2, num3):
   global module_frame
-  frame_scroll = module_frame = ctk.CTkScrollableFrame(root, fg_color="#0f1314", bg_color="#152945", width=1000, height=630)
-  module_frame.place(x=245, y=70)
+  frame_scroll = module_frame = ctk.CTkScrollableFrame(root, fg_color="#3f5673", bg_color="#152945", width=1100, height=768)
+  # tk.Label(root, bg="#3f5673", width=1024, height=720).place(x=0,y=0)
+  module_frame.place(x=230, y=0)
   clear_frame(frame_scroll)
   if num1 == 1:
     if num2 == 1:
@@ -80,7 +81,6 @@ def setup_sidebar():
   # ラベルに背景付きの円形画像を設定
   logo_image = ctk.CTkImage(background, size=size)
   
-  tk.Label(root, bg="#3f5673", width=1024, height=720).place(x=0,y=0)
   tk.Label(root, bg="#688fbf", width=32, height=720).place(x=0,y=0)
   
   ctk.CTkLabel(master=root,image=logo_image,text="").place(x=15,y=5)
