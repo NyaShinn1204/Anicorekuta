@@ -9,6 +9,7 @@ from tkinter import filedialog
 from CTkMessagebox import CTkMessagebox
 
 import util.abema as downloader_abema
+import util.unext as downloader_unext
 
 version = "0.0.1"
 
@@ -26,25 +27,36 @@ root.title("Hotaru-WV | v0.0.1")
 root.geometry("1366x768")
 root.resizable(0, 0)
 
+module_frame = None
+prev_frame = None
+
 def clear_frame(frame):
   for widget in frame.winfo_children():
     widget.destroy()
   frame.pack_forget()
 
 def setup_cotent_sidebar(num1, num2, num3):
-  global module_frame
+  global module_frame, prev_frame
+  
+  # 初期化
+  frame = None
+  
   frame_scroll = module_frame = ctk.CTkFrame(root, fg_color="#3f5673", bg_color="#3f5673", width=1100, height=768)
   # tk.Label(root, bg="#3f5673", width=1024, height=720).place(x=0,y=0)
   module_frame.place(x=230, y=0)
   clear_frame(frame_scroll)
+  # 以前のフレームがある場合はクリアする
+  if prev_frame is not None:
+      clear_frame(prev_frame)
   if num1 == 1:
     if num2 == 1:
       if num3 == 1:
-        #ctk.CTkLabel(master=module_frame, text="じゃｂどあういｂｗだいうｓびｄ").place(x=300,y=150)
-        downloader_abema.gui.init_gui(frame_scroll)
+        frame = downloader_abema.gui.init_gui(frame_scroll)
         
         printl("info", "Open Abema Downloader")
       if num3 == 2:
+        frame = downloader_unext.gui.init_gui(frame_scroll)
+        
         printl("info", "Open U-next Downloader")
       if num3 == None:
         # Load images and add them to the scrollable frame
@@ -65,7 +77,7 @@ def setup_cotent_sidebar(num1, num2, num3):
           # Bind the click event to the label
           label.bind("<Button-1>", lambda event, idx=i: on_image_click(idx+1))
           label.grid(row=i // 5, column=i % 5, padx=10, pady=10)  # 5 images per row
-        printl("info", "Open All DOwnloader")
+        printl("info", "Open All Downloader")
     if num2 == 2:
       if num3 == 1:
         printl("info", "Open Download List")
@@ -74,6 +86,7 @@ def setup_cotent_sidebar(num1, num2, num3):
   if num1 == 2:
     if num2 == 1:
       printl("info", "Open About Tab")
+  prev_frame = frame
 
 def setup_sidebar():
   # 画像をRGBAモードで開く
