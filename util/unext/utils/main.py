@@ -1,8 +1,6 @@
 # util/unext/utils/main.py
 import requests
 
-import data.setting as setting
-
 def parse_cookiefile(file_path):
     '''クッキーを辞書形式に変換するコード'''
     
@@ -32,6 +30,7 @@ def parse_cookiefile(file_path):
     return cookies
 
 def check_cookie(load_cookie):
+    import data.setting as setting
     '''クッキーをテストするコード'''
     check_json = {
         "operationName":"cosmo_userInfo",

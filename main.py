@@ -41,7 +41,7 @@ def setup_cotent_sidebar(num1, num2, num3):
   # 初期化
   frame = None
   
-  frame_scroll = module_frame = ctk.CTkFrame(root, fg_color="#3f5673", bg_color="#3f5673", width=1100, height=768)
+  frame_scroll = module_frame = ctk.CTkFrame(root, fg_color="#3f5673", bg_color="#3f5673", width=1150, height=768)
   # tk.Label(root, bg="#3f5673", width=1024, height=720).place(x=0,y=0)
   module_frame.place(x=230, y=0)
   clear_frame(frame_scroll)

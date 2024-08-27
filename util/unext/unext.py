@@ -3,7 +3,7 @@ import os
 import re
 import requests
 
-import util.unext.utils as util
+import util.unext.utils.main as util
 
 import data.setting as setting
 
@@ -17,6 +17,7 @@ def load_cookie():
     if len(file_name) == 0:
         print('選択をキャンセルしました')
     else:
+        
         check_cookie = util.parse_cookiefile(file_name)
         print(check_cookie)
         if check_cookie != None:
