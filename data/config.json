@@ -1,0 +1,11 @@
+{
+    "global_setting": {
+      "download_directory": "/output",
+      "temp_directory": "/temp",
+      "thumbnail_directory": "/output",
+      "export_style": "%%title%%_%%episode_num%%_%%episode_title%%"  
+    },
+    "unext": {
+        "cookie_path": ""
+    }
+}

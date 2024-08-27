@@ -37,11 +37,11 @@ def check_cookie(load_cookie):
         "variables":{},
         "query":"query cosmo_userInfo {\n  userInfo {\n    id\n    multiAccountId\n    userPlatformId\n    userPlatformCode\n    superUser\n    age\n    otherFunctionId\n    points\n    hasRegisteredEmail\n    billingCaution {\n      title\n      description\n      suggestion\n      linkUrl\n      __typename\n    }\n    blockInfo {\n      isBlocked\n      score\n      __typename\n    }\n    siteCode\n    accountTypeCode\n    linkedAccountIssuer\n    isAdultPermitted\n    needsAdultViewingRights\n    __typename\n  }\n}\n"
     }
-    print(load_cookie)
-    test_cookie = requests.post(setting.api_list["unext"], json=check_json, cookies=load_cookie)
-    return_json = test_cookie.json()
-    try:
-        print(return_json)
+    #print(load_cookie)
+    try:    
+        test_cookie = requests.post(setting.api_list["unext"], json=check_json, cookies=load_cookie)
+        return_json = test_cookie.json()
+        #print(return_json)
         if return_json["data"]["userInfo"]["hasRegisteredEmail"] == True:
             return True, return_json["data"]["userInfo"]["id"], None
         else:

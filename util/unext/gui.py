@@ -19,13 +19,13 @@ def init_gui(frame_scroll):
     url_or_path_entry = ctk.CTkEntry(module_frame, placeholder_text="URL or PATH", width=300)
     url_or_path_entry.place(x=160,y=10)
     
-    ctk.CTkButton(module_frame, text="メタデータの取得", font=("BIZ UDゴシック", 13, "normal"), command=lambda: get_metadata(url_or_path_entry.get()), width=70).place(x=265,y=80)
+    ctk.CTkButton(module_frame, text="メタデータの取得", font=("BIZ UDゴシック", 13, "normal"), command=lambda: get_metadata(url_or_path_entry.get()), width=70).place(x=340,y=45)
     
     #ctk.CTkButton(module_frame, text="開始", font=("BIZ UDゴシック", 13, "normal"), command=start_download, width=70).place(x=390,y=45)
     #ctk.CTkButton(module_frame, text="強制停止", font=("BIZ UDゴシック", 13, "normal"), command=stop_download, width=70).place(x=390,y=80)
     
     
-    ctk.CTkCheckBox(master=module_frame, text="動画のタイトルをStreamFab Likeにする", variable=setting.output_type, corner_radius=4, border_width=3, checkbox_width=20, onvalue="streamfab", offvalue="original", checkbox_height=20, font=("BIZ UDゴシック", 13, "normal")).place(x=10,y=50)
-    ctk.CTkCheckBox(master=module_frame, text="高速ダウンロード", variable=setting.fast_download, corner_radius=4, border_width=3, checkbox_width=20, checkbox_height=20, font=("BIZ UDゴシック", 13, "normal")).place(x=10,y=75)
+    ctk.CTkCheckBox(master=module_frame, text_color="#fff", text="高速ダウンロード", variable=setting.fast_download, corner_radius=4, border_width=3, checkbox_width=20, checkbox_height=20, font=("BIZ UDゴシック", 13, "normal")).place(x=10,y=50)
+    #ctk.CTkCheckBox(master=module_frame, text_color="#fff", text="高速ダウンロード", variable=setting.fast_download, corner_radius=4, border_width=3, checkbox_width=20, checkbox_height=20, font=("BIZ UDゴシック", 13, "normal")).place(x=10,y=75)
     
     return module_frame
