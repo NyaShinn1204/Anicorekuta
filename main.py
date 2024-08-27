@@ -8,9 +8,6 @@ from PIL import Image, ImageDraw, ImageOps
 from tkinter import filedialog
 from CTkMessagebox import CTkMessagebox
 
-import util.abema as downloader_abema
-import util.unext as downloader_unext
-
 version = "0.0.1"
 
 def printl(num, data):
@@ -26,6 +23,9 @@ root = ctk.CTk()
 root.title("Hotaru-WV | v0.0.1")
 root.geometry("1366x768")
 root.resizable(0, 0)
+
+import util.abema as downloader_abema
+import util.unext as downloader_unext
 
 module_frame = None
 prev_frame = None
