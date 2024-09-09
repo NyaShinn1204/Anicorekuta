@@ -1,4 +1,3 @@
-# Anicorekuta
-c++やpython, goを用いてダウンロードするツールにする予定
+# プロジェクトはプライベートgitに移動されました。
 
-widevineのprivate keyはどっかに保存
+# Project was moved to private git
