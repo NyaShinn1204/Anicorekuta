@@ -1,3 +1,3 @@
-# プロジェクトはプライベートgitに移動されました。
+## プロジェクトはプライベートgitに移動されました。
 
-# Project was moved to private git
+## Project was moved to private git
